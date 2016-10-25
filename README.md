@@ -13,8 +13,8 @@ package main
 import (
     "log"
 
-    "github.com/funny/link"
-    "github.com/funny/link/codec"
+    "github.com/unicok/unet"
+    "github.com/unicok/unet/codec"
 )
 
 type AddReq struct {
@@ -30,17 +30,17 @@ func main() {
     json.Register(AddReq{})
     json.Register(AddRsp{})
 
-    server, err := link.Serve("tcp", "0.0.0.0:0", json, 0 /* sync send */)
+    server, err := unet.Serve("tcp", "0.0.0.0:0", json, 0 /* sync send */)
     checkErr(err)
     addr := server.Listener().Addr().String()
-    go server.Serve(link.HandlerFunc(serverSessionLoop))
+    go server.Serve(unet.HandlerFunc(serverSessionLoop))
 
-    client, err := link.Connect("tcp", addr, json, 0)
+    client, err := unet.Connect("tcp", addr, json, 0)
     checkErr(err)
     clientSessionLoop(client)
 }
 
-func serverSessionLoop(session *link.Session) {
+func serverSessionLoop(session *unet.Session) {
     for {
         req, err := session.Receive()
         checkErr(err)
@@ -52,7 +52,7 @@ func serverSessionLoop(session *link.Session) {
     }
 }
 
-func clientSessionLoop(session *link.Session) {
+func clientSessionLoop(session *unet.Session) {
     for i := 0; i < 10; i++ {
         err := session.Send(&AddReq{
             i, i,
