@@ -2,7 +2,7 @@
 net skeleton for go
 
 [![Build Status](https://travis-ci.org/unicok/unet.svg?branch=master)](https://travis-ci.org/unicok/unet)
-[![Coverage Status](https://coveralls.io/repos/unicok/unet/badge.svg?branch=master&service=github)](https://coveralls.io/github/unicok/unet?branch=master)
+[![codecov](https://codecov.io/gh/unicok/unet/branch/master/graph/badge.svg)](https://codecov.io/gh/unicok/unet)
 
 exmaple
 ==========
