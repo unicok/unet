@@ -11,5 +11,5 @@ script:
     - go vet -x
     - go test -covermode=count -coverprofile=profile.cov -v github.com/unicok/unet/codec
 
-after_script:
+after_success:
     - bash <(curl -s https://codecov.io/bash)
