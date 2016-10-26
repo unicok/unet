@@ -3,6 +3,7 @@ net skeleton for go
 
 [![Build Status](https://travis-ci.org/unicok/unet.svg?branch=master)](https://travis-ci.org/unicok/unet)
 [![codecov](https://codecov.io/gh/unicok/unet/branch/master/graph/badge.svg)](https://codecov.io/gh/unicok/unet)
+[![Go Report Card](https://goreportcard.com/badge/github.com/unicok/unet)](https://goreportcard.com/report/github.com/unicok/unet)
 
 exmaple
 ==========
